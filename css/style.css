@@ -1,0 +1,108 @@
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #202124;
+    font-family: system-ui, sans-serif;
+}
+
+.file-section {
+    margin: 0 0 24px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    min-width: 0;
+}
+
+.file-section legend {
+    font-weight: 600;
+}
+
+.file-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.file-choice {
+    display: block;
+    padding: 12px;
+    background: #f5f6f7;
+    border-radius: 6px;
+}
+
+.file-choice input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.file-help {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#data-status {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+#verse-input {
+    display: block;
+    width: 100%;
+    min-height: 280px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+button {
+    min-height: 44px;
+    padding: 8px 18px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+#errors {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    color: #b42318;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+#result {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .file-options {
+        grid-template-columns: 1fr;
+    }
+
+    .actions button {
+        flex: 1;
+    }
+}

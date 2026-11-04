@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성경 구절 조회</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/vendor/jszip.min.js"></script>
+    <script type="module" src="./js/app.js"></script>
+</head>
+<body>
+    <h1>성경 구절 조회</h1>
+
+    <fieldset class="file-section">
+        <legend>성경 파일 선택</legend>
+        <p>PC에서는 TXT 폴더를, 아이폰에서는 ZIP 파일 하나를 선택하세요.</p>
+        <div class="file-options">
+            <label class="file-choice" for="folder-input">
+                TXT 폴더 선택
+                <input id="folder-input" type="file" webkitdirectory multiple>
+            </label>
+            <label class="file-choice" for="zip-input">
+                ZIP 파일 선택
+                <input id="zip-input" type="file" accept=".zip,application/zip,application/x-zip-compressed">
+            </label>
+        </div>
+        <p class="file-help">기존 TXT 파일 이름을 유지해 주세요. 선택한 본문은 서버로 전송하지 않고 이 브라우저 안에서만 읽습니다.</p>
+        <p id="data-status" role="status">아직 성경 파일을 선택하지 않았습니다. 폴더 또는 ZIP 파일을 선택해 주세요.</p>
+    </fieldset>
+
+    <p id="input-help">한 줄에 하나씩 입력하세요. 예: 요한복음 3:16 또는 베드로후서 1장 4-7절</p>
+    <textarea id="verse-input" rows="12"
+        aria-label="조회할 성경 구절" aria-describedby="input-help"
+        placeholder="예: 요한복음 3:16 또는 베드로후서 1장 4-7절"></textarea>
+
+    <div class="actions">
+        <button id="search-btn" type="button" disabled>조회하기</button>
+        <button id="copy-btn" type="button" disabled>전체 복사</button>
+    </div>
+
+    <div id="errors" role="alert"></div>
+    <p id="status" role="status"></p>
+    <div id="result"></div>
+</body>
+</html>
